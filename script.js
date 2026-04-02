@@ -10,7 +10,6 @@ window.addEventListener('scroll', () => {
   const heroHeight = hero.offsetHeight;
   const fade = Math.max(1 - scrollY / (heroHeight * 0.6), 0);
 
-  // Reversed: bottom layer fastest, top layer slowest
   athlete1.style.transform = `translateY(${scrollY * 0.6}px)`;
   athlete1.style.opacity = fade;
 
@@ -23,7 +22,6 @@ window.addEventListener('scroll', () => {
   athlete3.style.transform = `translateY(${scrollY * 0.1}px)`;
   athlete3.style.opacity = fade;
 
-  // Olympic rings: lock 20px below LA logo when scrolled to that point
   const ringsNaturalTop = heroHeight - 20 - olympicRings.offsetHeight;
   const lockTop = 65;
   if (scrollY >= ringsNaturalTop - lockTop) {
@@ -38,7 +36,6 @@ window.addEventListener('scroll', () => {
   const rows = document.querySelectorAll('.sports-row');
   if (!rows.length) return;
 
-  // Duplicate cards for seamless loop
   rows.forEach(row => {
     const cards = Array.from(row.children);
     cards.forEach(card => row.appendChild(card.cloneNode(true)));
@@ -48,7 +45,7 @@ window.addEventListener('scroll', () => {
   const autoSpeed = 0.5;
   const directions = [1, -1, 1];
 
-  // JS-based hover since CSS :hover is unreliable with constant rAF transforms
+  // JS hover — CSS :hover breaks with constant rAF transforms
   document.querySelectorAll('.sport-card').forEach(card => {
     card.addEventListener('mouseenter', () => card.classList.add('hovered'));
     card.addEventListener('mouseleave', () => card.classList.remove('hovered'));
