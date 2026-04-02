@@ -125,11 +125,60 @@ body {
   flex-shrink: 0;
 }
 
-/* Section 2 */
+/* Section 2 — Diagonal Sport Scroll */
 .section-2 {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   background: #fff;
   z-index: 10;
+  overflow: hidden;
+}
+
+.sports-scroll-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  width: 200%;
+}
+
+.sports-diagonal {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sports-row {
+  display: flex;
+  gap: 20px;
+  will-change: transform;
+}
+
+.sport-card {
+  flex-shrink: 0;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: grab;
+  user-select: none;
+}
+
+.sport-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.sport-card span {
+  margin-top: 8px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #000;
+  text-align: center;
 }
