@@ -60,12 +60,9 @@ window.addEventListener('scroll', () => {
 
   wrapper.addEventListener('mousedown', e => {
     isDragging = true;
-    dragStartX = e.clientX;
-    dragStartY = e.clientY;
     lastDragX = e.clientX;
     dragVelocity = 0;
-    wrapper.style.cursor = 'grabbing';
-    e.preventDefault();
+    document.body.style.cursor = 'grabbing';
   });
 
   window.addEventListener('mousemove', e => {
@@ -82,7 +79,7 @@ window.addEventListener('scroll', () => {
   window.addEventListener('mouseup', () => {
     if (!isDragging) return;
     isDragging = false;
-    wrapper.style.cursor = '';
+    document.body.style.cursor = '';
   });
 
   // Touch support
