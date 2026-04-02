@@ -13,6 +13,34 @@ body {
   overflow-x: hidden;
 }
 
+/* Fixed nav logos */
+.la-logo {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+.la-logo img {
+  width: 140px;
+  display: block;
+}
+
+.olympic-rings {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+.olympic-rings img {
+  width: 100px;
+  display: block;
+}
+
+/* Hero */
 .hero {
   position: relative;
   width: 100%;
@@ -21,52 +49,24 @@ body {
   overflow: hidden;
 }
 
-/* LA Logo */
-.la-logo {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
-.la-logo img {
-  width: 140px;
-  display: block;
-}
-
 /* Athletes */
 .athlete {
   position: absolute;
-  mix-blend-mode: multiply;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-/* V1 - pink/orange/yellow - top right, cut off */
 .athlete-1 {
-  width: 50%;
-  max-width: 700px;
-  top: -8%;
-  right: -10%;
   z-index: 1;
 }
 
-/* V2 - pink/red - center left, flipped */
 .athlete-2 {
-  width: 50%;
-  max-width: 700px;
-  top: 15%;
-  left: -5%;
-  transform: scaleX(-1);
   z-index: 2;
 }
 
-/* V3 - purple - bottom left, flipped, cut off */
 .athlete-3 {
-  width: 50%;
-  max-width: 700px;
-  bottom: -15%;
-  left: -5%;
-  transform: scaleX(-1);
   z-index: 3;
 }
 
@@ -95,18 +95,4 @@ body {
   position: relative;
   width: 180px;
   flex-shrink: 0;
-}
-
-/* Olympic Rings */
-.olympic-rings {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
-.olympic-rings img {
-  width: 100px;
-  display: block;
 }
