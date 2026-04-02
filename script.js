@@ -34,27 +34,34 @@ window.addEventListener('scroll', () => {
   }
 });
 
-/* ── Section 2: Diagonal infinite sport scroll with 3D tilt ── */
+/* ── Section 2: Diagonal infinite sport scroll ── */
 (() => {
-  const row = document.querySelector('.sports-row');
-  if (!row) return;
+  const rows = document.querySelectorAll('.sports-row');
+  if (!rows.length) return;
 
-  // Duplicate cards for seamless looping
-  const cards = Array.from(row.children);
-  cards.forEach(card => row.appendChild(card.cloneNode(true)));
+  // Duplicate cards in each row for seamless looping
+  rows.forEach(row => {
+    const cards = Array.from(row.children);
+    cards.forEach(card => row.appendChild(card.cloneNode(true)));
+  });
 
-  let offset = 0;
-  const autoSpeed = 0.5;
-  const diagAngle = 0.3; // vertical movement ratio (rise per horizontal px)
+  // Per-row scroll offset
+  const offsets = Array.from(rows).map(() => 0);
+  const autoSpeed = 0.5; // px per frame
+  const directions = [1, -1, 1]; // alternate directions per row
 
   // Drag state
   let isDragging = false;
+  let dragStartX = 0;
+  let dragStartY = 0;
   let dragVelocity = 0;
   let lastDragX = 0;
   const wrapper = document.querySelector('.sports-scroll-wrapper');
 
   wrapper.addEventListener('mousedown', e => {
     isDragging = true;
+    dragStartX = e.clientX;
+    dragStartY = e.clientY;
     lastDragX = e.clientX;
     dragVelocity = 0;
     wrapper.style.cursor = 'grabbing';
@@ -66,7 +73,10 @@ window.addEventListener('scroll', () => {
     const dx = e.clientX - lastDragX;
     dragVelocity = dx;
     lastDragX = e.clientX;
-    offset -= dx * 1.5; // scale up drag since perspective shrinks apparent motion
+    // Move all rows by drag delta (accounting for rotation)
+    rows.forEach((row, i) => {
+      offsets[i] -= dx;
+    });
   });
 
   window.addEventListener('mouseup', () => {
@@ -87,33 +97,37 @@ window.addEventListener('scroll', () => {
     const dx = e.touches[0].clientX - lastDragX;
     dragVelocity = dx;
     lastDragX = e.touches[0].clientX;
-    offset -= dx * 1.5;
+    rows.forEach((row, i) => {
+      offsets[i] -= dx;
+    });
   }, { passive: true });
 
   window.addEventListener('touchend', () => {
     isDragging = false;
   });
 
+  // Animation loop
   function animate() {
-    if (!isDragging) {
-      if (Math.abs(dragVelocity) > 0.5) {
-        offset -= dragVelocity;
-        dragVelocity *= 0.95;
-      } else {
-        dragVelocity = 0;
-        offset += autoSpeed;
+    rows.forEach((row, i) => {
+      // Auto-scroll when not dragging
+      if (!isDragging) {
+        // Apply momentum decay
+        if (Math.abs(dragVelocity) > 0.5) {
+          offsets[i] -= dragVelocity;
+          dragVelocity *= 0.95;
+        } else {
+          dragVelocity = 0;
+          offsets[i] += autoSpeed * directions[i];
+        }
       }
-    }
 
-    // Seamless loop
-    const halfWidth = row.scrollWidth / 2;
-    if (offset >= halfWidth) offset -= halfWidth;
-    if (offset < 0) offset += halfWidth;
+      // Get the width of half the content (original cards) for seamless reset
+      const halfWidth = row.scrollWidth / 2;
+      if (offsets[i] >= halfWidth) offsets[i] -= halfWidth;
+      if (offsets[i] < 0) offsets[i] += halfWidth;
 
-    // Diagonal path: translate both X and Y
-    const tx = -offset;
-    const ty = -offset * diagAngle;
-    row.style.transform = `translate(${tx}px, ${ty}px)`;
+      row.style.transform = `translateX(${-offsets[i]}px)`;
+    });
 
     requestAnimationFrame(animate);
   }
