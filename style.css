@@ -13,13 +13,33 @@ body {
   overflow-x: hidden;
 }
 
-/* Fixed nav logos */
-.la-logo {
+/* Fixed Nav */
+.nav {
   position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-left a,
+.nav-right a {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  text-decoration: none;
+  letter-spacing: 0.02em;
 }
 
 .la-logo img {
@@ -27,6 +47,7 @@ body {
   display: block;
 }
 
+/* Fixed Olympic Rings */
 .olympic-rings {
   position: fixed;
   bottom: 20px;
@@ -46,28 +67,27 @@ body {
   width: 100%;
   height: 100vh;
   min-height: 700px;
-  overflow: hidden;
 }
 
 /* Athletes */
 .athlete {
   position: absolute;
-  width: 100%;
   left: 0;
+  top: 0;
 }
 
 .athlete-1 {
-  top: 0;
+  width: 100%;
   z-index: 1;
 }
 
 .athlete-2 {
-  top: 0;
+  width: 80%;
   z-index: 50;
 }
 
 .athlete-3 {
-  top: 0;
+  width: 80%;
   z-index: 200;
 }
 
