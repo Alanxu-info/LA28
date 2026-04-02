@@ -26,7 +26,7 @@ window.addEventListener('scroll', () => {
   // Olympic rings: lock 20px below LA logo when scrolled to that point
   // Rings start at bottom:20px in the hero, so their top = heroHeight - 20 - ringsHeight
   const ringsNaturalTop = heroHeight - 20 - olympicRings.offsetHeight;
-  const lockTop = 90; // 20px below LA logo bottom
+  const lockTop = 65; // ~10px below LA logo bottom
   if (scrollY >= ringsNaturalTop - lockTop) {
     olympicRings.classList.add('locked');
   } else {
