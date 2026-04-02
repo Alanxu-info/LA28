@@ -23,9 +23,11 @@ window.addEventListener('scroll', () => {
   athlete3.style.transform = `translateY(${scrollY * 0.1}px)`;
   athlete3.style.opacity = fade;
 
-  // Olympic rings: lock under LA logo when scrolled to threshold
-  const ringsBottom = hero.offsetHeight - 20 - olympicRings.offsetHeight;
-  if (scrollY >= ringsBottom - 90) {
+  // Olympic rings: lock 20px below LA logo when scrolled to that point
+  // Rings start at bottom:20px in the hero, so their top = heroHeight - 20 - ringsHeight
+  const ringsNaturalTop = heroHeight - 20 - olympicRings.offsetHeight;
+  const lockTop = 90; // 20px below LA logo bottom
+  if (scrollY >= ringsNaturalTop - lockTop) {
     olympicRings.classList.add('locked');
   } else {
     olympicRings.classList.remove('locked');
