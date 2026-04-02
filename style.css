@@ -63,12 +63,12 @@ body {
 
 .athlete-2 {
   top: 0;
-  z-index: 2;
+  z-index: 50;
 }
 
 .athlete-3 {
-  bottom: 0;
-  z-index: 3;
+  top: 0;
+  z-index: 200;
 }
 
 /* Center Wordmark with line running through */
@@ -78,7 +78,7 @@ body {
   left: 0;
   right: 0;
   transform: translateY(-50%);
-  z-index: 5;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,4 +96,13 @@ body {
   position: relative;
   width: 180px;
   flex-shrink: 0;
+}
+
+/* Section 2 */
+.section-2 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  z-index: 10;
 }
