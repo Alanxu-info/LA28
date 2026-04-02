@@ -125,6 +125,14 @@ body {
   flex-shrink: 0;
 }
 
+.spacer {
+  position: relative;
+  width: 100%;
+  height: 20vh;
+  background: #fff;
+  z-index: 10;
+}
+
 /* Section 2 — Diagonal Sport Scroll */
 .section-2 {
   position: relative;
@@ -179,7 +187,7 @@ body {
 
 .sport-card .card-label {
   margin-top: 8px;
-  display: flex;
+  display: none;
   gap: 6px;
   align-items: baseline;
   font-size: 14px;
@@ -197,5 +205,5 @@ body {
 
 .sport-card .card-name {
   font-family: "Times New Roman", Times, serif;
-  font-size: 15px;
+  font-size: 15.5px;
 }
