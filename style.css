@@ -305,11 +305,13 @@ body {
 
 /* Footer */
 .footer {
-  position: relative;
-  margin-top: -120px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 60px 100px;
   background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-  z-index: 20;
+  z-index: 10;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
