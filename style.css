@@ -331,3 +331,51 @@ body {
   height: 24px;
   display: block;
 }
+
+/* About Page */
+.about-page {
+  position: relative;
+  width: 100%;
+  height: 2619px;
+  background: url("About%20Page%20BKG.png") no-repeat top center;
+  background-size: 1728px 2619px;
+  overflow: hidden;
+}
+
+.about-page-text {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 160px 100px;
+}
+
+.about-block {
+  max-width: 380px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.1s, transform 0.1s;
+}
+
+.about-block.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-block h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.about-block p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-top: 20px;
+  color: #000;
+}
