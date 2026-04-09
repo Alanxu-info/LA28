@@ -338,6 +338,12 @@ body {
   z-index: 20;
 }
 
+.about-rings {
+  position: absolute;
+  top: calc(100vh - 60px);
+  bottom: auto;
+}
+
 
 /* About Page */
 .about-page {

@@ -1,12 +1,12 @@
-/* ── Olympic Rings: lock under LA logo on scroll (same as home page) ── */
+/* ── Olympic Rings: lock under LA logo on scroll ── */
 const olympicRings = document.querySelector('.olympic-rings');
 const aboutPage = document.querySelector('.about-page');
 
-if (olympicRings && aboutPage) {
+if (olympicRings) {
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    const pageHeight = aboutPage.offsetHeight;
-    const ringsNaturalTop = pageHeight - 20 - olympicRings.offsetHeight;
+    const vh = window.innerHeight;
+    const ringsNaturalTop = vh - 60;
     const lockTop = 65;
 
     if (scrollY >= ringsNaturalTop - lockTop) {
@@ -53,12 +53,18 @@ if (olympicRings && aboutPage) {
       const rect = block.getBoundingClientRect();
       const blockCenter = rect.top + rect.height / 2;
       const fadeInPoint = vh * 0.85;
-      const fadeOutPoint = vh * 0.1;
+      const fadeOutPoint = vh * 0.2;
 
       if (blockCenter < fadeInPoint && blockCenter > fadeOutPoint) {
-        const distFromEdge = Math.min(blockCenter - fadeOutPoint, fadeInPoint - blockCenter);
-        const fadeZone = vh * 0.2;
-        const opacity = Math.min(distFromEdge / fadeZone, 1);
+        const distFromBottom = fadeInPoint - blockCenter;
+        const distFromTop = blockCenter - fadeOutPoint;
+        // Fade in zone from bottom
+        const fadeInZone = vh * 0.2;
+        // Fade out zone from top — much smaller for faster fade out
+        const fadeOutZone = vh * 0.08;
+        const fadeInOpacity = Math.min(distFromBottom / fadeInZone, 1);
+        const fadeOutOpacity = Math.min(distFromTop / fadeOutZone, 1);
+        const opacity = Math.min(fadeInOpacity, fadeOutOpacity);
         block.style.opacity = opacity;
         block.style.transform = `translateY(${(1 - opacity) * 30}px)`;
       } else {
