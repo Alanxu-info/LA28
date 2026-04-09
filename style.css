@@ -332,6 +332,11 @@ body {
   display: block;
 }
 
+.about-footer {
+  position: relative;
+  margin-top: -120px;
+}
+
 /* About Page */
 .about-page {
   position: relative;
@@ -356,12 +361,6 @@ body {
   max-width: 380px;
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.1s, transform 0.1s;
-}
-
-.about-block.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .about-block h2 {
