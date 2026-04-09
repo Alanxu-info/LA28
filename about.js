@@ -1,31 +1,24 @@
-/* ── Olympic Rings: start at bottom of viewport, lock under LA logo on scroll ── */
-(() => {
-  const rings = document.querySelector('.olympic-rings');
-  if (!rings) return;
+/* ── Olympic Rings: lock under LA logo on scroll (same as home page) ── */
+const olympicRings = document.querySelector('.olympic-rings');
+const aboutPage = document.querySelector('.about-page');
 
-  const lockTop = 65;
-
-  // Position rings at bottom of viewport initially
-  const updateRings = () => {
+if (olympicRings && aboutPage) {
+  window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    const viewportH = window.innerHeight;
-    // Natural position: bottom of the first viewport
-    const ringsNaturalTop = viewportH - 20 - rings.offsetHeight;
+    const pageHeight = aboutPage.offsetHeight;
+    const ringsNaturalTop = pageHeight - 20 - olympicRings.offsetHeight;
+    const lockTop = 65;
 
     if (scrollY >= ringsNaturalTop - lockTop) {
-      rings.classList.add('locked');
+      olympicRings.classList.add('locked');
     } else {
-      rings.classList.remove('locked');
+      olympicRings.classList.remove('locked');
     }
-  };
-
-  window.addEventListener('scroll', updateRings);
-  updateRings();
-})();
+  });
+}
 
 /* ── About Page: overlapping layers with fade-in animation ── */
 (() => {
-  const aboutPage = document.querySelector('.about-page');
   const layer2 = document.querySelector('.about-layer-2');
   const layer3 = document.querySelector('.about-layer-3');
   const text2 = document.querySelector('.about-text-2');
