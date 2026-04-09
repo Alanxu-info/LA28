@@ -447,3 +447,23 @@ body {
   color: #000;
 }
 
+/* Game Plan Page */
+.gameplan-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("Game%20Plan%20bkg.png") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameplan-title {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+}
+
