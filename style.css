@@ -468,3 +468,18 @@ body {
   line-height: 75px;
 }
 
+/* Game Plan Chart */
+.gameplan-chart-section {
+  position: relative;
+  width: 100%;
+  padding: 80px 60px;
+  background: #fff;
+  z-index: 10;
+}
+
+.gameplan-chart {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
