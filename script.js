@@ -45,14 +45,15 @@ window.addEventListener('scroll', () => {
     cards.forEach(card => row.appendChild(card.cloneNode(true)));
   });
 
-  const offsets = Array.from(rows).map(() => 0);
   const autoSpeed = 0.5;
   const directions = [1, -1, 1];
 
-  // JS hover — CSS :hover breaks with constant rAF transforms
-  document.querySelectorAll('.sport-card').forEach(card => {
-    card.addEventListener('mouseenter', () => card.classList.add('hovered'));
-    card.addEventListener('mouseleave', () => card.classList.remove('hovered'));
+  // Initialize offsets — reverse rows start at halfWidth so they appear filled
+  const offsets = Array.from(rows).map((row, i) => {
+    if (directions[i] === -1) {
+      return row.scrollWidth / 2;
+    }
+    return 0;
   });
 
   function animate() {
