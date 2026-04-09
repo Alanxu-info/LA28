@@ -363,13 +363,11 @@ body {
 .about-layer-2 {
   z-index: 2;
   opacity: 0;
-  transform: translateY(40px);
 }
 
 .about-layer-3 {
   z-index: 3;
   opacity: 0;
-  transform: translateY(40px);
 }
 
 /* About Text Layers */
@@ -385,22 +383,24 @@ body {
 }
 
 .about-text-1 {
-  top: 0%;
+  top: 4%;
   z-index: 4;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 .about-text-2 {
-  top: 23%;
+  top: 27%;
   z-index: 5;
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(30px);
 }
 
 .about-text-3 {
-  top: 46%;
+  top: 50%;
   z-index: 6;
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(30px);
 }
 
 .about-block {
