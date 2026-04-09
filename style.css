@@ -338,20 +338,23 @@ body {
   z-index: 20;
 }
 
+.about-page ~ .about-footer {
+  z-index: 100;
+}
+
 /* About Page */
 .about-page {
   position: relative;
   width: 100%;
-  height: 3429px;
-  overflow: hidden;
+  height: 300vh;
 }
 
 .about-layer {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
 }
 
