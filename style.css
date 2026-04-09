@@ -333,8 +333,10 @@ body {
 }
 
 .about-footer {
-  position: relative;
-  margin-top: -140px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 20;
 }
 

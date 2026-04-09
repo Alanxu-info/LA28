@@ -36,15 +36,15 @@ if (olympicRings) {
     const pageH = aboutPage.offsetHeight;
     const vh = window.innerHeight;
 
-    // Background layer 2 fades in (5%-15%)
-    const fade2Start = pageH * 0.05;
-    const fade2End = pageH * 0.15;
+    // Background layer 2 fades in (15%-25%)
+    const fade2Start = pageH * 0.15;
+    const fade2End = pageH * 0.25;
     const t2 = Math.min(Math.max((scrollY - fade2Start) / (fade2End - fade2Start), 0), 1);
     layer2.style.opacity = t2;
 
-    // Background layer 3 fades in (25%-35%)
-    const fade3Start = pageH * 0.25;
-    const fade3End = pageH * 0.35;
+    // Background layer 3 fades in (45%-55%)
+    const fade3Start = pageH * 0.45;
+    const fade3End = pageH * 0.55;
     const t3 = Math.min(Math.max((scrollY - fade3Start) / (fade3End - fade3Start), 0), 1);
     layer3.style.opacity = t3;
 
