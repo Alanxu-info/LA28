@@ -377,7 +377,7 @@ body {
 .about-layer-3 {
   z-index: 3;
   opacity: 0;
-  top: -500px;
+  top: -100px;
 }
 
 /* About Text Layers */
