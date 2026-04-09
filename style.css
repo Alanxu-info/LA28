@@ -379,8 +379,8 @@ body {
   width: 100%;
   height: 33.33%;
   display: flex;
-  align-items: flex-start;
-  padding: 100px 240px;
+  align-items: center;
+  padding: 0 240px;
 }
 
 .about-text-1 {
@@ -396,7 +396,7 @@ body {
 }
 
 .about-text-3 {
-  top: 66.66%;
+  top: 60%;
   z-index: 6;
   opacity: 0;
   transform: translateY(40px);
@@ -414,22 +414,22 @@ body {
 
 .about-block h2 .t-helv {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 38px;
+  font-size: 48px;
 }
 
 .about-block h2 .t-mono {
   font-family: "IBM Plex Mono", monospace;
-  font-size: 38px;
+  font-size: 48px;
 }
 
 .about-block h2 .t-times {
   font-family: "Times New Roman", Times, serif;
-  font-size: 40px;
+  font-size: 50px;
 }
 
 .about-block p {
   font-family: "Times New Roman", Times, serif;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.35;
   margin-top: 20px;
