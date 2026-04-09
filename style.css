@@ -471,14 +471,13 @@ body {
 /* Game Plan Chart */
 .gameplan-chart-section {
   position: relative;
-  width: 100%;
-  padding: 80px 60px;
+  width: 100vw;
   background: #fff;
   z-index: 10;
 }
 
 .gameplan-chart {
-  width: 100%;
+  width: 100vw;
   height: auto;
   display: block;
 }
