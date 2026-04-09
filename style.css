@@ -215,7 +215,7 @@ body {
 .news-section {
   position: relative;
   width: 100%;
-  padding: 200px 60px 140px;
+  padding: 280px 100px 140px;
   background: transparent;
   z-index: 10;
 }
@@ -265,12 +265,11 @@ body {
 .about-section {
   position: relative;
   width: 100%;
-  padding: 160px 60px;
+  padding: 240px 100px;
   background: transparent;
   z-index: 10;
   display: flex;
   align-items: flex-start;
-  flex: 1;
 }
 
 .about-content {
@@ -306,9 +305,11 @@ body {
 
 /* Footer */
 .footer {
-  position: relative;
-  width: 100%;
-  padding: 60px 60px 40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 60px 100px;
   background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
   z-index: 10;
   display: flex;
@@ -317,7 +318,7 @@ body {
 }
 
 .footer-logo img {
-  width: 280px;
+  width: 420px;
   display: block;
 }
 
@@ -334,7 +335,7 @@ body {
 }
 
 .footer-socials img {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   display: block;
 }
