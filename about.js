@@ -2,11 +2,11 @@
 const olympicRings = document.querySelector('.olympic-rings');
 const aboutPage = document.querySelector('.about-page');
 
-if (olympicRings && aboutPage) {
+if (olympicRings) {
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    const pageHeight = aboutPage.offsetHeight;
-    const ringsNaturalTop = pageHeight - 20 - olympicRings.offsetHeight;
+    const vh = window.innerHeight;
+    const ringsNaturalTop = vh - 60;
     const lockTop = 65;
 
     if (scrollY >= ringsNaturalTop - lockTop) {

@@ -334,8 +334,15 @@ body {
 
 .about-footer {
   position: relative;
-  margin-top: 0;
+  margin-top: -140px;
   z-index: 20;
+}
+
+.about-rings {
+  position: absolute;
+  top: calc(100vh - 60px);
+  bottom: auto;
+  z-index: 50;
 }
 
 
@@ -390,14 +397,14 @@ body {
 }
 
 .about-text-2 {
-  top: 27%;
+  top: 34%;
   z-index: 5;
   opacity: 0;
   transform: translateY(30px);
 }
 
 .about-text-3 {
-  top: 50%;
+  top: 64%;
   z-index: 6;
   opacity: 0;
   transform: translateY(30px);
