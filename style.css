@@ -339,6 +339,9 @@ body {
 }
 
 .about-rings {
+  position: absolute;
+  bottom: auto;
+  top: calc(100vh - 60px);
   z-index: 50;
 }
 

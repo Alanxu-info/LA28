@@ -1,22 +1,26 @@
-/* ── Olympic Rings: lock under LA logo on scroll ── */
+/* ── Olympic Rings: start at bottom of viewport, lock under LA logo on scroll ── */
 (() => {
   const rings = document.querySelector('.olympic-rings');
-  const aboutPage = document.querySelector('.about-page');
-  if (!rings || !aboutPage) return;
+  if (!rings) return;
 
   const lockTop = 65;
 
-  window.addEventListener('scroll', () => {
+  // Position rings at bottom of viewport initially
+  const updateRings = () => {
     const scrollY = window.scrollY;
-    const pageBottom = aboutPage.offsetTop + aboutPage.offsetHeight;
-    const ringsNaturalTop = pageBottom - 20 - rings.offsetHeight;
+    const viewportH = window.innerHeight;
+    // Natural position: bottom of the first viewport
+    const ringsNaturalTop = viewportH - 20 - rings.offsetHeight;
 
     if (scrollY >= ringsNaturalTop - lockTop) {
       rings.classList.add('locked');
     } else {
       rings.classList.remove('locked');
     }
-  });
+  };
+
+  window.addEventListener('scroll', updateRings);
+  updateRings();
 })();
 
 /* ── About Page: overlapping layers with fade-in animation ── */
