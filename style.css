@@ -388,19 +388,19 @@ body {
 }
 
 .about-text-1 {
-  top: 5%;
+  top: 2%;
   z-index: 4;
 }
 
 .about-text-2 {
-  top: 28%;
+  top: 22%;
   z-index: 5;
   opacity: 0;
   transform: translateY(40px);
 }
 
 .about-text-3 {
-  top: 51%;
+  top: 42%;
   z-index: 6;
   opacity: 0;
   transform: translateY(40px);
