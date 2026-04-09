@@ -26,19 +26,14 @@ if (olympicRings) {
   const text3 = document.querySelector('.about-text-3');
   if (!aboutPage) return;
 
-  // Fade in text 1 on load
-  text1.style.opacity = 1;
-  text1.style.transform = 'translateY(0)';
-  text1.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     const pageH = aboutPage.offsetHeight;
     const vh = window.innerHeight;
 
-    // Background layer 2 fades in (15%-25%)
-    const fade2Start = pageH * 0.15;
-    const fade2End = pageH * 0.25;
+    // Background layer 2 fades in (8%-18%)
+    const fade2Start = pageH * 0.08;
+    const fade2End = pageH * 0.18;
     const t2 = Math.min(Math.max((scrollY - fade2Start) / (fade2End - fade2Start), 0), 1);
     layer2.style.opacity = t2;
 
@@ -48,8 +43,8 @@ if (olympicRings) {
     const t3 = Math.min(Math.max((scrollY - fade3Start) / (fade3End - fade3Start), 0), 1);
     layer3.style.opacity = t3;
 
-    // Text fade in/out based on viewport position
-    [text1, text2, text3].forEach(block => {
+    // Text fade in/out based on viewport position (text1 excluded)
+    [text2, text3].forEach(block => {
       const rect = block.getBoundingClientRect();
       const blockCenter = rect.top + rect.height / 2;
       const fadeInPoint = vh * 0.85;
