@@ -324,18 +324,10 @@ body {
 
 .footer-socials {
   display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.footer-socials a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
 }
 
 .footer-socials img {
-  width: 24px;
   height: 24px;
   display: block;
 }
