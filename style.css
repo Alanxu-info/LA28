@@ -342,9 +342,30 @@ body {
 .about-page {
   position: relative;
   width: 100%;
-  height: 2619px;
-  background: url("About%20Page%20BKG.png") no-repeat top center;
-  background-size: 1728px 2619px;
+  height: 3429px;
   overflow: hidden;
+}
+
+.about-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-layer-1 {
+  z-index: 1;
+}
+
+.about-layer-2 {
+  z-index: 2;
+  opacity: 0;
+}
+
+.about-layer-3 {
+  z-index: 3;
+  opacity: 0;
 }
 
