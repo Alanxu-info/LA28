@@ -338,6 +338,10 @@ body {
   z-index: 20;
 }
 
+.about-rings {
+  z-index: 50;
+}
+
 /* About Page */
 .about-page {
   position: relative;
@@ -384,19 +388,19 @@ body {
 }
 
 .about-text-1 {
-  top: 0;
+  top: 5%;
   z-index: 4;
 }
 
 .about-text-2 {
-  top: 33.33%;
+  top: 28%;
   z-index: 5;
   opacity: 0;
   transform: translateY(40px);
 }
 
 .about-text-3 {
-  top: 60%;
+  top: 51%;
   z-index: 6;
   opacity: 0;
   transform: translateY(40px);

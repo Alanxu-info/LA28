@@ -1,3 +1,24 @@
+/* ── Olympic Rings: lock under LA logo on scroll ── */
+(() => {
+  const rings = document.querySelector('.olympic-rings');
+  const aboutPage = document.querySelector('.about-page');
+  if (!rings || !aboutPage) return;
+
+  const lockTop = 65;
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const pageBottom = aboutPage.offsetTop + aboutPage.offsetHeight;
+    const ringsNaturalTop = pageBottom - 20 - rings.offsetHeight;
+
+    if (scrollY >= ringsNaturalTop - lockTop) {
+      rings.classList.add('locked');
+    } else {
+      rings.classList.remove('locked');
+    }
+  });
+})();
+
 /* ── About Page: overlapping layers with fade-in animation ── */
 (() => {
   const aboutPage = document.querySelector('.about-page');
