@@ -362,11 +362,13 @@ body {
 .about-layer-2 {
   z-index: 2;
   opacity: 0;
+  transform: translateY(40px);
 }
 
 .about-layer-3 {
   z-index: 3;
   opacity: 0;
+  transform: translateY(40px);
 }
 
 /* About Text Layers */
@@ -378,7 +380,7 @@ body {
   height: 33.33%;
   display: flex;
   align-items: flex-start;
-  padding: 100px 100px;
+  padding: 100px 240px;
 }
 
 .about-text-1 {
@@ -390,12 +392,14 @@ body {
   top: 33.33%;
   z-index: 5;
   opacity: 0;
+  transform: translateY(40px);
 }
 
 .about-text-3 {
   top: 66.66%;
   z-index: 6;
   opacity: 0;
+  transform: translateY(40px);
 }
 
 .about-block {
@@ -405,7 +409,7 @@ body {
 .about-block h2 {
   font-size: 38px;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.05;
 }
 
 .about-block h2 .t-helv {
@@ -420,15 +424,15 @@ body {
 
 .about-block h2 .t-times {
   font-family: "Times New Roman", Times, serif;
-  font-size: 42px;
+  font-size: 40px;
 }
 
 .about-block p {
   font-family: "Times New Roman", Times, serif;
   font-size: 17px;
   font-weight: 400;
-  line-height: 1.6;
-  margin-top: 24px;
+  line-height: 1.35;
+  margin-top: 20px;
   color: #000;
 }
 
