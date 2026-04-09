@@ -215,7 +215,7 @@ body {
 .news-section {
   position: relative;
   width: 100%;
-  padding: 80px 60px;
+  padding: 140px 60px;
   background: transparent;
   z-index: 10;
 }
@@ -265,7 +265,7 @@ body {
 .about-section {
   position: relative;
   width: 100%;
-  padding: 120px 60px;
+  padding: 160px 60px;
   background: transparent;
   z-index: 10;
   display: flex;
